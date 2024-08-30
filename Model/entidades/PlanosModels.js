@@ -14,7 +14,7 @@ class PlanosModel{
     }
 
     static async ObterTodos(){
-        const sql = 'SELECT * FROM planos'
+        const sql = 'SELECT * FROM planos ORDER BY pla_nome ASC'
         const results = await db.executaComando(sql);
         return results.map(row => new PlanosModel(row));
     }
